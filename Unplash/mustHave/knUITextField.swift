@@ -41,10 +41,10 @@ extension UITextField {
         return button
     }
     
-    func setLeftViewWithImage(_ imge:UIImage){
+    func setLeftViewWithImage(_ image:UIImage){
         
         let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 33,height: 21))
-        imgView.image = imge
+        imgView.image = image
         imgView.contentMode = .scaleAspectFill
         leftView = imgView
         leftViewMode = .always

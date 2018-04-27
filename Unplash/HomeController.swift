@@ -11,6 +11,7 @@ import UIKit
 class HomeController: knCustomTableController {
     var datasource = [Photo]()
     let headerView = HeaderView()
+    let animatedHeader = HeaderView()
 
     let categoryView = PhotoGroupView()
     lazy var photoGroupCell = self.makePhotoGroupCell()
@@ -37,18 +38,24 @@ class HomeController: knCustomTableController {
         setupView()
         fetchData()
     }
-    
+    let headerHeight: CGFloat = 350
+
+    var animatedHeaderHeightConstraint: NSLayoutConstraint?
     override func setupView() {
-        view.addSubview(tableView)
+        view.addSubviews(views: animatedHeader, tableView)
+        animatedHeader.translatesAutoresizingMaskIntoConstraints = false
+        animatedHeader.horizontal(toView: view)
+        animatedHeaderHeightConstraint = animatedHeader.height(headerHeight)
+        animatedHeader.top(toView: view)
+        
         tableView.fill(toView: view)
+        tableView.backgroundColor = .clear
         
         tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         statusBarStyle = .lightContent
         
-        let headerHeight: CGFloat = 350
         headerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: headerHeight)
         tableView.tableHeaderView = headerView
-
     }
     
     override func registerCells() {
@@ -71,8 +78,38 @@ class HomeController: knCustomTableController {
         tableView.reloadData()
         
         headerView.data = Photo(author: "Kyle", url: "https://unsplash.com/photos/zydhjnjppEc/download", ratio: 0.667954600338083)
+        animatedHeader.data = headerView.data
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+        let stopPoint: CGFloat = 96
+        let newHeight = headerHeight - yOffset
+        bringFakeViewToFontIf(isTop: yOffset == 0)
+        var opacity = (newHeight - stopPoint) / headerHeight
+        opacity = opacity > 0 ? opacity : 0
+        
+        if newHeight > stopPoint {
+            animatedHeaderHeightConstraint?.constant = newHeight
+            headerView.isHidden = true
+            animatedHeader.authorLabel.alpha = opacity
+            animatedHeader.titleLabel.alpha = opacity
+            statusBarStyle = .lightContent
+            animatedHeader.changeSearchTextFieldStyle(.dark)
+        }
+        else {
+            headerView.isHidden = false
+            statusBarStyle = .default
+            animatedHeader.changeSearchTextFieldStyle(.light)
+        }
+        
+        let whiteViewOpacity = (newHeight * 2.2) / headerHeight
+        animatedHeader.animateWhiteView(by: whiteViewOpacity)
+    }
+    
+    func bringFakeViewToFontIf(isTop: Bool) {
+        view.bringSubview(toFront: isTop ? tableView : animatedHeader)
+    }
     
 }
 

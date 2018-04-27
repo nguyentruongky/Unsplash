@@ -9,9 +9,13 @@
 import UIKit
 class HeaderView: knView {
     
+    enum Style {
+        case dark, light
+    }
+    
     var data: Photo? {didSet {
         guard let data = data else { return }
-        authorLabel.text = "photo by " + data.author
+        authorLabel.text = "Photo by " + data.author
         imageView.downloadImage(from: data.url)
         }}
     
@@ -20,16 +24,21 @@ class HeaderView: knView {
     let titleLabel = knUIMaker.makeLabel(text: "Photos for everyone", font: UIFont.boldSystemFont(ofSize: 32), color: .white, alignment: .center)
     let searchTextField = knUIMaker.makeTextField(placeholder: "Search photos")
     
+    let whiteView = knUIMaker.makeView(background: .white)
+    
     override func setupView() {
         translatesAutoresizingMaskIntoConstraints = true
         
+        whiteView.alpha = 0
         searchTextField.createRoundCorner(8)
         searchTextField.setLeftViewWithImage(#imageLiteral(resourceName: "search"))
         searchTextField.height(44)
-        searchTextField.changePlaceholderTextColor(.white)
+        changeSearchTextFieldStyle(.dark)
         addBlur(to: searchTextField, size: CGSize(width: screenWidth - 16 * 2, height: 44))
         
-        addSubviews(views: imageView, titleLabel, searchTextField, authorLabel)
+        addSubviews(views: imageView, whiteView, titleLabel, searchTextField, authorLabel)
+        
+        whiteView.fill(toView: self)
         
         imageView.fill(toView: self)
         
@@ -41,13 +50,31 @@ class HeaderView: knView {
         
         authorLabel.centerX(toView: self)
         authorLabel.bottom(toView: self, space: -16)
-        
-        
     }
     
+    func changeSearchTextFieldStyle(_ style: Style) {
+        if style == .light {
+            blurEffectView.removeFromSuperview()
+            searchTextField.backgroundColor = UIColor.color(value: 230)
+            let color = UIColor.color(value: 150)
+            searchTextField.changePlaceholderTextColor(color)
+            (searchTextField.leftView as? UIImageView)?.change(color: color)
+        }
+        else {
+            addBlur(to: searchTextField, size: CGSize(width: screenWidth - 16 * 2, height: 44))
+            let color = UIColor.white
+            searchTextField.changePlaceholderTextColor(color)
+            (searchTextField.leftView as? UIImageView)?.change(color: color)
+        }
+    }
+    
+    func animateWhiteView(by opacity: CGFloat) {
+        let whiteViewOpacity = opacity > 0 ? opacity : 0
+        whiteView.alpha = 1 - whiteViewOpacity
+    }
+    
+    private let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
     func addBlur(to view: UIView, size: CGSize) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
