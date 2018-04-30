@@ -11,9 +11,9 @@ import UIKit
 class Photo {
     var author: String
     var url: String
-    var ratio: CGFloat = 1
+    var ratio: CGFloat = 1 // ratio = width / height
     var displayHeight: CGFloat {
-        return CGFloat(floor(Double(ratio * screenWidth)))
+        return CGFloat(floor(Double(screenWidth / ratio)))
     }
     
     init(author: String, url: String, ratio: CGFloat) {

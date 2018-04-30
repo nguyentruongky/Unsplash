@@ -24,7 +24,7 @@ class knController : UIViewController {
 
 
 
-class knCollectionController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class knCollectionController: knController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +32,32 @@ class knCollectionController: UICollectionViewController, UICollectionViewDelega
         registerCells()
     }
     
-    init() { super.init(collectionViewLayout: UICollectionViewFlowLayout()) }
-    
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented")}
-    
+    lazy var collectionView: UICollectionView = { [weak self] in
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .white
+        cv.showsHorizontalScrollIndicator = false
+        cv.showsVerticalScrollIndicator = false
+        cv.delegate = self
+        cv.dataSource = self
+        return cv
+        
+        }()
+
     func registerCells() { }
-    func setupView() { }
-    func fetchData() { }
+    override func setupView() { }
+    override func fetchData() { }
     
     deinit { print("Deinit \(NSStringFromClass(type(of: self)))") }
+}
+
+extension knCollectionController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 0 }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return 0 }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { return UICollectionViewCell() }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { return UICollectionViewCell() }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat { return 0 }
     

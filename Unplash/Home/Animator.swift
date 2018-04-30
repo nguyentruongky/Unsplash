@@ -148,13 +148,13 @@ class Animator {
         return bigView.frame.intersects(smallView.frame) || smallView.frame.intersects(bigView.frame)
     }
     
-    private func cloneImageView(from imageView: UIImageView) -> UIImageView {
+    func cloneImageView(from imageView: UIImageView) -> UIImageView {
         let iv = knUIMaker.makeImageView(image: imageView.image, contentMode: imageView.contentMode)
         iv.translatesAutoresizingMaskIntoConstraints = true
         return iv
     }
     
-    private func changeFrameToView(from childView: UIView) -> CGRect {
+    func changeFrameToView(from childView: UIView) -> CGRect {
         return childView.convert(childView.frame, to: view) }
     
     private func locationInView(from gesture: UILongPressGestureRecognizer) -> CGPoint {

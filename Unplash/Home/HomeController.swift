@@ -45,6 +45,7 @@ class HomeController: knCustomTableController {
 
     var animatedHeaderHeightConstraint: NSLayoutConstraint?
     override func setupView() {
+        navigationController?.isNavigationBarHidden = true 
         view.addSubviews(views: animatedHeader, tableView)
         animatedHeader.translatesAutoresizingMaskIntoConstraints = false
         animatedHeader.horizontal(toView: view)
@@ -76,13 +77,14 @@ class HomeController: knCustomTableController {
         }
         categoryView.datasource = categories
         
-        for _ in 0 ..< 5 {
-            datasource.append(Photo(author: "Kyle", url: "https://unsplash.com/photos/zydhjnjppEc/download", ratio: 0.667954600338083))
-            datasource.append(Photo(author: "Mark", url: "https://unsplash.com/photos/Y6N_w94x8ik/download", ratio: 1.5))
-        }
+        datasource.append(Photo(author: "Lidya Nada", url: "https://unsplash.com/photos/-iX-0JI8-0Y/download", ratio: 0.7069555302))
+        datasource.append(Photo(author: "Redd Angelo", url: "https://unsplash.com/photos/RbzquZ-xTF8/download", ratio: 0.667987546))
+        datasource.append(Photo(author: "enjoythelight", url: "https://unsplash.com/photos/sAX4wwWYbFE/download", ratio: 0.7815))
+        datasource.append(Photo(author: "Monika Grabkowska", url: "https://unsplash.com/photos/S3g2H4Acw4g/download", ratio: 0.666667))
+        datasource.append(Photo(author: "Deryn Macey", url: "https://unsplash.com/photos/QF0R6Q1C1u0/download", ratio: 0.66755))
         tableView.reloadData()
         
-        headerView.data = Photo(author: "Kyle", url: "https://unsplash.com/photos/zydhjnjppEc/download", ratio: 0.667954600338083)
+        headerView.data = Photo(author: "Monika Grabkowska", url: "https://unsplash.com/photos/S3g2H4Acw4g/download", ratio: 0.666667)
         animatedHeader.data = headerView.data
     }
     
@@ -127,6 +129,29 @@ extension HomeController {
         cell.data = datasource[indexPath.row - 1]
         cell.longGestureAction = { [weak self] recognizer in self?.didLongPressCell(recognizer: recognizer)}
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 { return }
+        let cell = tableView.cellForRow(at: indexPath)
+        guard let imageView = cell?.viewWithTag(1001) as? UIImageView else { return }
+        let newImageView = animator.cloneImageView(from: imageView)
+        let originalFrame = animator.changeFrameToView(from: imageView)
+        newImageView.frame = originalFrame
+        view.addSubviews(views: newImageView)
+        
+        UIView.animate(withDuration: 0.35, animations: {
+            newImageView.backgroundColor = .black
+            newImageView.contentMode = .scaleAspectFit
+            newImageView.frame = UIScreen.main.bounds
+        }, completion: { _ in
+            let controller = DetailController()
+            controller.originalFrame = originalFrame
+            controller.currentPhotoIndex = indexPath.row - 1
+            controller.modalPresentationStyle = .overCurrentContext
+            self.present(controller, animated: false)
+            newImageView.removeFromSuperview()
+        })
     }
     
     @objc func didLongPressCell(recognizer: UILongPressGestureRecognizer) {
