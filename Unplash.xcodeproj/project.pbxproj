@@ -39,6 +39,7 @@
 		C11C43252091169B009C7756 /* FAFlowLayout.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C43242091169B009C7756 /* FAFlowLayout.swift.swift */; };
 		C11C432720912259009C7756 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C432620912259009C7756 /* HeaderView.swift */; };
 		C12EE1B6209110EE009BEBC9 /* PhotoGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12EE1B5209110EE009BEBC9 /* PhotoGroupView.swift */; };
+		C144FD6B20967F97009CE36B /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C144FD6A20967F97009CE36B /* Animator.swift */; };
 		C17FC28B20918AAA00B4D05B /* PhotoGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17FC28A20918AAA00B4D05B /* PhotoGroupCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		C11C43242091169B009C7756 /* FAFlowLayout.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAFlowLayout.swift.swift; sourceTree = "<group>"; };
 		C11C432620912259009C7756 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C12EE1B5209110EE009BEBC9 /* PhotoGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGroupView.swift; sourceTree = "<group>"; };
+		C144FD6A20967F97009CE36B /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		C17FC28A20918AAA00B4D05B /* PhotoGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGroupCell.swift; sourceTree = "<group>"; };
 		CB6AC0594A51BD06C2FB8FDD /* Pods_Unplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				C117AA49208EEC9800189309 /* mustHave */,
 				C117AA37208EE6B300189309 /* AppDelegate.swift */,
 				C117AA76208FE16D00189309 /* PhotoCell.swift */,
+				C144FD6A20967F97009CE36B /* Animator.swift */,
 				C117AA72208F2AD500189309 /* HomeController.swift */,
 				C11C432620912259009C7756 /* HeaderView.swift */,
 				C117AA74208FCBDD00189309 /* PhotoModel.swift */,
@@ -328,6 +331,7 @@
 				C117AA6C208EEC9800189309 /* knUIView.swift in Sources */,
 				C117AA6E208EEC9800189309 /* knView.swift in Sources */,
 				C11C43252091169B009C7756 /* FAFlowLayout.swift.swift in Sources */,
+				C144FD6B20967F97009CE36B /* Animator.swift in Sources */,
 				C117AA60208EEC9800189309 /* knController.swift in Sources */,
 				C117AA64208EEC9800189309 /* knString.swift in Sources */,
 				C117AA62208EEC9800189309 /* knFont.swift in Sources */,

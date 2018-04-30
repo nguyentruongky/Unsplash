@@ -22,6 +22,8 @@ class PhotoCell: knTableCell {
     private let photoImageView = knUIMaker.makeImageView(contentMode: .scaleAspectFill)
     
     override func setupView() {
+        
+        photoImageView.tag = 1001
         let line = knUIMaker.makeLine(color: .white, height: 1)
         
         addSubviews(views: photoImageView, authorLabel, line)
