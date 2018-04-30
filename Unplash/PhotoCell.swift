@@ -18,6 +18,8 @@ class PhotoCell: knTableCell {
         }
     }
 
+    var longGestureAction: ((_ gesture: UILongPressGestureRecognizer) -> Void)?
+    
     private let authorLabel = knUIMaker.makeLabel(color: .white)
     private let photoImageView = knUIMaker.makeImageView(contentMode: .scaleAspectFill)
     
@@ -37,5 +39,12 @@ class PhotoCell: knTableCell {
         heightConstraint = height(100, isActive: false)
         heightConstraint?.priority = UILayoutPriority(999)
         heightConstraint?.isActive = true
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(detectLongPress))
+        addGestureRecognizer(longGesture)
+    }
+    
+    @objc func detectLongPress(gesture: UILongPressGestureRecognizer) {
+        longGestureAction?(gesture)
     }
 }

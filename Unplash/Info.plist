@@ -43,5 +43,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Save photo from Unplash to your Photos Library</string>
 </dict>
 </plist>
