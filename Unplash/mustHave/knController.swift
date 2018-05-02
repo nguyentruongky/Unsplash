@@ -18,7 +18,6 @@ class knController : UIViewController {
     func fetchData() { }
     deinit {
         print("Deinit \(NSStringFromClass(type(of: self)))")
-        removeKeyboardNotificationListeners()
     }
 }
 
@@ -64,32 +63,6 @@ extension knCollectionController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { return UIScreen.main.bounds.size }
 }
 
-
-
-class knTableController: UITableViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        automaticallyAdjustsScrollViewInsets = false
-        registerCells()
-    }
-    
-    func setupView() { }
-    func registerCells() { }
-    func fetchData() { }
-    deinit {
-        print("Deinit \(NSStringFromClass(type(of: self)))")
-        removeKeyboardNotificationListeners()
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 0 }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { return UITableViewCell() }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 100 }
-}
-
-
-
 class knCustomTableController: knController {
     
     override func viewDidLoad() {
@@ -118,7 +91,6 @@ class knCustomTableController: knController {
     
     deinit {
         print("Deinit \(NSStringFromClass(type(of: self)))")
-        removeKeyboardNotificationListeners()
     }
     
     
@@ -131,50 +103,3 @@ extension knCustomTableController: UITableViewDataSource, UITableViewDelegate {
 }
 
 
-extension UINavigationController {
-    
-    func setBarHiddenWhenScrolling(inScrollView scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        if actualPosition.y > 0 {
-            setNavigationBarHidden(false, animated: true)
-            return
-        }
-        setNavigationBarHidden(scrollView.contentOffset.y > 24, animated: true)
-    }
-    
-    func changeTitleFont(_ font: UIFont, color: UIColor = .white) {
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color,
-                                             NSAttributedStringKey.font: font]
-    }
-    
-    func removeBottomSeparator(color: UIColor = .white, titleColor: UIColor = .black) {
-        navigationBar.setBackgroundImage(UIImage.imageFromColor(colour: color), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.tintColor = titleColor
-    }
-    
-    func fillNavigationBar(withColors colors: [CGColor],
-                           startPoint: CGPoint = CGPoint(x: 0, y: 0),
-                           endPoint: CGPoint = CGPoint(x: 1, y: 1)) {
-        
-        let gradientLayer = CAGradientLayer()
-        var updatedFrame = navigationBar.bounds
-        updatedFrame.size.height += 20
-        gradientLayer.frame = updatedFrame
-        gradientLayer.colors = colors
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        let image = gradientLayer.renderImage()
-        navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-    }
-}
-
-extension CALayer {
-    func renderImage() -> UIImage? {
-        UIGraphicsBeginImageContext(bounds.size)
-        render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}

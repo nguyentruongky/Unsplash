@@ -26,7 +26,10 @@ class PhotoCell: knTableCell {
     override func setupView() {
         
         photoImageView.tag = 1001
-        let line = knUIMaker.makeLine(color: .white, height: 1)
+        let line = UIView()
+        line.translatesAutoresizingMaskIntoConstraints = false
+        line.backgroundColor = .white
+        line.height(1)
         
         addSubviews(views: photoImageView, authorLabel, line)
         photoImageView.fill(toView: self)

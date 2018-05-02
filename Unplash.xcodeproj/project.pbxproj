@@ -15,23 +15,11 @@
 		C117AA5E208EEC9800189309 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4A208EEC9800189309 /* Global.swift */; };
 		C117AA5F208EEC9800189309 /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4B208EEC9800189309 /* knConstraints.swift */; };
 		C117AA60208EEC9800189309 /* knController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4C208EEC9800189309 /* knController.swift */; };
-		C117AA61208EEC9800189309 /* knDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4D208EEC9800189309 /* knDate.swift */; };
-		C117AA62208EEC9800189309 /* knFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4E208EEC9800189309 /* knFont.swift */; };
-		C117AA63208EEC9800189309 /* knInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA4F208EEC9800189309 /* knInt.swift */; };
-		C117AA64208EEC9800189309 /* knString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA50208EEC9800189309 /* knString.swift */; };
-		C117AA65208EEC9800189309 /* knUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA51208EEC9800189309 /* knUIApplication.swift */; };
-		C117AA66208EEC9800189309 /* knUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA52208EEC9800189309 /* knUIButton.swift */; };
-		C117AA67208EEC9800189309 /* knUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA53208EEC9800189309 /* knUIColor.swift */; };
 		C117AA68208EEC9800189309 /* knUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA54208EEC9800189309 /* knUIImage.swift */; };
 		C117AA69208EEC9800189309 /* knUIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA55208EEC9800189309 /* knUIMaker.swift */; };
-		C117AA6A208EEC9800189309 /* knUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA56208EEC9800189309 /* knUISearchBar.swift */; };
 		C117AA6B208EEC9800189309 /* knUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA57208EEC9800189309 /* knUITextField.swift */; };
 		C117AA6C208EEC9800189309 /* knUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA58208EEC9800189309 /* knUIView.swift */; };
-		C117AA6D208EEC9800189309 /* knUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA59208EEC9800189309 /* knUIViewController.swift */; };
 		C117AA6E208EEC9800189309 /* knView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA5A208EEC9800189309 /* knView.swift */; };
-		C117AA6F208EEC9800189309 /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA5B208EEC9800189309 /* OtherExtensions.swift */; };
-		C117AA70208EEC9800189309 /* ServiceConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA5C208EEC9800189309 /* ServiceConnector.swift */; };
-		C117AA71208EEC9800189309 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA5D208EEC9800189309 /* UIViewController+Keyboard.swift */; };
 		C117AA73208F2AD500189309 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA72208F2AD500189309 /* HomeController.swift */; };
 		C117AA75208FCBDD00189309 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA74208FCBDD00189309 /* PhotoModel.swift */; };
 		C117AA77208FE16D00189309 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117AA76208FE16D00189309 /* PhotoCell.swift */; };
@@ -57,23 +45,11 @@
 		C117AA4A208EEC9800189309 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		C117AA4B208EEC9800189309 /* knConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
 		C117AA4C208EEC9800189309 /* knController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knController.swift; sourceTree = "<group>"; };
-		C117AA4D208EEC9800189309 /* knDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knDate.swift; sourceTree = "<group>"; };
-		C117AA4E208EEC9800189309 /* knFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knFont.swift; sourceTree = "<group>"; };
-		C117AA4F208EEC9800189309 /* knInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knInt.swift; sourceTree = "<group>"; };
-		C117AA50208EEC9800189309 /* knString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knString.swift; sourceTree = "<group>"; };
-		C117AA51208EEC9800189309 /* knUIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIApplication.swift; sourceTree = "<group>"; };
-		C117AA52208EEC9800189309 /* knUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIButton.swift; sourceTree = "<group>"; };
-		C117AA53208EEC9800189309 /* knUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIColor.swift; sourceTree = "<group>"; };
 		C117AA54208EEC9800189309 /* knUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIImage.swift; sourceTree = "<group>"; };
 		C117AA55208EEC9800189309 /* knUIMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIMaker.swift; sourceTree = "<group>"; };
-		C117AA56208EEC9800189309 /* knUISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUISearchBar.swift; sourceTree = "<group>"; };
 		C117AA57208EEC9800189309 /* knUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUITextField.swift; sourceTree = "<group>"; };
 		C117AA58208EEC9800189309 /* knUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIView.swift; sourceTree = "<group>"; };
-		C117AA59208EEC9800189309 /* knUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knUIViewController.swift; sourceTree = "<group>"; };
 		C117AA5A208EEC9800189309 /* knView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knView.swift; sourceTree = "<group>"; };
-		C117AA5B208EEC9800189309 /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
-		C117AA5C208EEC9800189309 /* ServiceConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConnector.swift; sourceTree = "<group>"; };
-		C117AA5D208EEC9800189309 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		C117AA72208F2AD500189309 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		C117AA74208FCBDD00189309 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		C117AA76208FE16D00189309 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
@@ -157,23 +133,11 @@
 				C117AA4A208EEC9800189309 /* Global.swift */,
 				C117AA4B208EEC9800189309 /* knConstraints.swift */,
 				C117AA4C208EEC9800189309 /* knController.swift */,
-				C117AA4D208EEC9800189309 /* knDate.swift */,
-				C117AA4E208EEC9800189309 /* knFont.swift */,
-				C117AA4F208EEC9800189309 /* knInt.swift */,
-				C117AA50208EEC9800189309 /* knString.swift */,
-				C117AA51208EEC9800189309 /* knUIApplication.swift */,
-				C117AA52208EEC9800189309 /* knUIButton.swift */,
-				C117AA53208EEC9800189309 /* knUIColor.swift */,
 				C117AA54208EEC9800189309 /* knUIImage.swift */,
 				C117AA55208EEC9800189309 /* knUIMaker.swift */,
-				C117AA56208EEC9800189309 /* knUISearchBar.swift */,
 				C117AA57208EEC9800189309 /* knUITextField.swift */,
 				C117AA58208EEC9800189309 /* knUIView.swift */,
-				C117AA59208EEC9800189309 /* knUIViewController.swift */,
 				C117AA5A208EEC9800189309 /* knView.swift */,
-				C117AA5B208EEC9800189309 /* OtherExtensions.swift */,
-				C117AA5C208EEC9800189309 /* ServiceConnector.swift */,
-				C117AA5D208EEC9800189309 /* UIViewController+Keyboard.swift */,
 			);
 			path = mustHave;
 			sourceTree = "<group>";
@@ -341,32 +305,20 @@
 			files = (
 				C144FD70209717B6009CE36B /* DetailController.swift in Sources */,
 				C117AA77208FE16D00189309 /* PhotoCell.swift in Sources */,
-				C117AA66208EEC9800189309 /* knUIButton.swift in Sources */,
-				C117AA6A208EEC9800189309 /* knUISearchBar.swift in Sources */,
-				C117AA6D208EEC9800189309 /* knUIViewController.swift in Sources */,
 				C117AA38208EE6B300189309 /* AppDelegate.swift in Sources */,
-				C117AA63208EEC9800189309 /* knInt.swift in Sources */,
 				C117AA75208FCBDD00189309 /* PhotoModel.swift in Sources */,
-				C117AA6F208EEC9800189309 /* OtherExtensions.swift in Sources */,
 				C17FC28B20918AAA00B4D05B /* PhotoGroupCell.swift in Sources */,
 				C117AA68208EEC9800189309 /* knUIImage.swift in Sources */,
-				C117AA67208EEC9800189309 /* knUIColor.swift in Sources */,
-				C117AA70208EEC9800189309 /* ServiceConnector.swift in Sources */,
-				C117AA65208EEC9800189309 /* knUIApplication.swift in Sources */,
 				C117AA69208EEC9800189309 /* knUIMaker.swift in Sources */,
 				C11C4323209111EC009C7756 /* PhotoGroupModel.swift in Sources */,
 				C117AA5E208EEC9800189309 /* Global.swift in Sources */,
 				C12EE1B6209110EE009BEBC9 /* PhotoGroupView.swift in Sources */,
 				C117AA73208F2AD500189309 /* HomeController.swift in Sources */,
-				C117AA71208EEC9800189309 /* UIViewController+Keyboard.swift in Sources */,
 				C117AA6C208EEC9800189309 /* knUIView.swift in Sources */,
 				C117AA6E208EEC9800189309 /* knView.swift in Sources */,
 				C11C43252091169B009C7756 /* FAFlowLayout.swift.swift in Sources */,
 				C144FD6B20967F97009CE36B /* Animator.swift in Sources */,
 				C117AA60208EEC9800189309 /* knController.swift in Sources */,
-				C117AA64208EEC9800189309 /* knString.swift in Sources */,
-				C117AA62208EEC9800189309 /* knFont.swift in Sources */,
-				C117AA61208EEC9800189309 /* knDate.swift in Sources */,
 				C117AA6B208EEC9800189309 /* knUITextField.swift in Sources */,
 				C117AA5F208EEC9800189309 /* knConstraints.swift in Sources */,
 				C144FD72209717EB009CE36B /* DetailCell.swift in Sources */,

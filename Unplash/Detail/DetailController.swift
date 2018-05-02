@@ -37,9 +37,11 @@ class DetailController: knCollectionController {
         collectionView.showsHorizontalScrollIndicator = false
         statusBarStyle = .lightContent
         
-        let button = knUIMaker.makeButton(image: #imageLiteral(resourceName: "cancel").changeColor())
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(#imageLiteral(resourceName: "cancel").changeColor(), for: .normal)
         button.tintColor = .white
-        button.addTarget(self, action: #selector(closeView))
+        button.addTarget(self, action: #selector(closeView), for: .touchUpInside)
         view.addSubviews(views: button)
         button.square(edge: 44)
         button.topLeft(toView: view, top: 24, left: 16)
@@ -73,7 +75,6 @@ class DetailController: knCollectionController {
         datasource.append(Photo(author: "Redd Angelo", url: "https://unsplash.com/photos/RbzquZ-xTF8/download", ratio: 0.667987546))
         datasource.append(Photo(author: "enjoythelight", url: "https://unsplash.com/photos/sAX4wwWYbFE/download", ratio: 0.7815))
         datasource.append(Photo(author: "Monika Grabkowska", url: "https://unsplash.com/photos/S3g2H4Acw4g/download", ratio: 0.666667))
-        datasource.append(Photo(author: "Deryn Macey", url: "https://unsplash.com/photos/QF0R6Q1C1u0/download", ratio: 0.66755))
         collectionView.reloadData()
     }
     

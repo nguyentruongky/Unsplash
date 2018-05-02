@@ -81,7 +81,6 @@ class HomeController: knCustomTableController {
         datasource.append(Photo(author: "Redd Angelo", url: "https://unsplash.com/photos/RbzquZ-xTF8/download", ratio: 0.667987546))
         datasource.append(Photo(author: "enjoythelight", url: "https://unsplash.com/photos/sAX4wwWYbFE/download", ratio: 0.7815))
         datasource.append(Photo(author: "Monika Grabkowska", url: "https://unsplash.com/photos/S3g2H4Acw4g/download", ratio: 0.666667))
-        datasource.append(Photo(author: "Deryn Macey", url: "https://unsplash.com/photos/QF0R6Q1C1u0/download", ratio: 0.66755))
         tableView.reloadData()
         
         headerView.data = Photo(author: "Monika Grabkowska", url: "https://unsplash.com/photos/S3g2H4Acw4g/download", ratio: 0.666667)

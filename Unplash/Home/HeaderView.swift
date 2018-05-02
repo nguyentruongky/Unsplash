@@ -55,8 +55,8 @@ class HeaderView: knView {
     func changeSearchTextFieldStyle(_ style: Style) {
         if style == .light {
             blurEffectView.removeFromSuperview()
-            searchTextField.backgroundColor = UIColor.color(value: 230)
-            let color = UIColor.color(value: 150)
+            searchTextField.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+            let color = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
             searchTextField.changePlaceholderTextColor(color)
             (searchTextField.leftView as? UIImageView)?.change(color: color)
         }
